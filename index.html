@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TODO</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <h1>TODO</h1>
+      <p class="summary" id="summary" aria-live="polite"></p>
+    </header>
+    <div class="progress" aria-hidden="true"><div class="progress-bar" id="progress-bar"></div></div>
+
+    <form class="new-todo card" id="new-todo" autocomplete="off">
+      <input id="new-title" type="text" placeholder="やることを入力…" aria-label="新しいTODO" autofocus>
+      <input id="new-due" type="date" aria-label="期限（任意）" title="期限（任意）">
+      <button type="submit" class="primary">追加</button>
+    </form>
+
+    <section class="list-panel card" aria-label="TODO一覧">
+      <div class="toolbar" id="toolbar">
+        <label class="toggle-all"><input type="checkbox" id="toggle-all"> すべて完了</label>
+        <nav class="filters" aria-label="表示の絞り込み">
+          <a href="#/" data-filter="all">すべて</a>
+          <a href="#/active" data-filter="active">未完了</a>
+          <a href="#/completed" data-filter="completed">完了</a>
+        </nav>
+      </div>
+      <ul class="todo-list" id="todo-list"></ul>
+      <p class="empty" id="empty"></p>
+      <footer class="list-footer" id="list-footer">
+        <span id="count"></span>
+        <button type="button" class="link-button" id="clear-completed">完了済みを削除</button>
+      </footer>
+    </section>
+
+    <p class="hint">タイトルをダブルクリックで編集 ・ Esc で編集キャンセル ・ データはこのブラウザに保存されます</p>
+  </main>
+
+  <script src="todo.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
